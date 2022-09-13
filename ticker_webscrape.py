@@ -1,7 +1,4 @@
-import os
-import time
-import threading
-import requests
+import os, time, requests
 from bs4 import BeautifulSoup
 
 # get the data
@@ -20,13 +17,6 @@ ADA = 'Cardano'
 SOL = 'Solana'
 DOT = 'Polkadot'
 
-crypto = BTC, ETH, ADA, SOL, DOT
-
-
-def clear_data():
-    time.sleep(5)
-    os.system('clear')
-
 def get_data():
 	for tr in tbody:
 		name = tr.find_all('td')[2].text.strip()
@@ -41,7 +31,9 @@ def get_data():
 			print('SOL: ', price)
 		if DOT in name:
 			print('DOT: ', price)
+	
+	time.sleep(5)
 
 while True:
-    clear_data()
+    os.system('clear')
     get_data()

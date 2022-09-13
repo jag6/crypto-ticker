@@ -1,7 +1,7 @@
-import cryptocompare
-import time
+import cryptocompare, time, os
 
 while True:
+    os.system('clear')
     priceBTC = cryptocompare.get_price('BTC', 'USD')
     priceETH = cryptocompare.get_price('ETH', 'USD')
     priceADA = cryptocompare.get_price('ADA', 'USD')
